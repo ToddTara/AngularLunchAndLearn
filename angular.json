@@ -25,9 +25,77 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "file-saver",
+              "quill",
+              "lodash",
+              "xlsx",
+              "primeng/primeng",
+              "primeng/dynamicdialog",
+              "primeng/api",
+              "primeng/treetable",
+              "primeng/tooltip",
+              "primeng/toolbar",
+              "primeng/togglebutton",
+              "primeng/toast",
+              "primeng/tabview",
+              "primeng/tabview",
+              "primeng/tree",
+              "primeng/table",
+              "primeng/tabmenu",
+              "primeng/steps",
+              "primeng/splitbutton",
+              "primeng/spinner",
+              "primeng/slider",
+              "primeng/sidebar",
+              "rxjs/BehaviorSubject",
+              "primeng/tieredmenu",
+              "primeng/selectbutton",
+              "primeng/scrollpanel",
+              "primeng/rating",
+              "primeng/radiobutton",
+              "primeng/progressbar",
+              "primeng/password",
+              "primeng/panelmenu",
+              "primeng/panel",
+              "primeng/overlaypanel",
+              "primeng/paginator",
+              "primeng/calendar",
+              "primeng/multiselect",
+              "primeng/message",
+              "primeng/messages",
+              "primeng/menubar",
+              "primeng/menu",
+              "primeng/megamenu",
+              "primeng/listbox",
+              "primeng/keyfilter",
+              "primeng/card",
+              "primeng/checkbox",
+              "primeng/codehighlighter",
+              "primeng/confirmdialog",
+              "primeng/dragdrop",
+              "primeng/dropdown",
+              "primeng/fieldset",
+              "primeng/inplace",
+              "primeng/inputmask",
+              "primeng/inputswitch",
+              "primeng/inputtext",
+              "primeng/inputtextarea",
+              "primeng/editor",
+              "primeng/dialog",
+              "primeng/dataview",
+              "primeng/contextmenu",
+              "primeng/button",
+              "primeng/breadcrumb",
+              "primeng/autocomplete",
+              "primeng/accordion"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,12 +155,63 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "src/styles.css"
             ],
             "scripts": []
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "myNewAngularApp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "myNewAngularApp:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "myNewAngularApp:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "myNewAngularApp:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "myNewAngularApp:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "myNewAngularApp:serve:production"
+            }
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "93c85ebb-29f8-454a-8c50-00f39ed49a6c"
   }
 }

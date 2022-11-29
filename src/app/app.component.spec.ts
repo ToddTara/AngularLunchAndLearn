@@ -17,12 +17,14 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    // @ts-ignore
     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'myNewAngularApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    // @ts-ignore
     expect(app.title).toEqual('myNewAngularApp');
   });
 
@@ -30,6 +32,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
+    // @ts-ignore
     expect(compiled.querySelector('.content span')?.textContent).toContain('myNewAngularApp app is running!');
   });
 });
