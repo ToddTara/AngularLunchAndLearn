@@ -6,5 +6,4 @@ export interface ProductFormModel {
   category: FormControl<string | null>;
   price: FormControl<number | null>;
   quantity: FormControl<number | null>;
-  email: FormControl<string| null>;
 }

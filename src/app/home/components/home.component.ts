@@ -91,7 +91,6 @@ export class HomeComponent implements OnInit {
 
     this.product = {
       name: this.productForm.controls.name.value || '',
-      email: this.productForm.controls.email.value || '',
       description: this.productForm.controls.description.value || '',
       category: this.productForm.controls.category.value || '',
       price: this.productForm.controls.price.value || 0,
@@ -130,11 +129,10 @@ export class HomeComponent implements OnInit {
   createProductForm(product?: Product): void {
     this.productForm = this.fb.group({
       name: new FormControl<string | null>(product?.name || '', [Validators.required]),
-      email: new FormControl<string | null>(product?.email || '', [Validators.required, Validators.email]),
       description: new FormControl<string | null>(product?.description || ''),
       category: new FormControl<string | null>(product?.category || '', [Validators.required]),
       price: new FormControl<number | null>(product?.price || 0, [Validators.required, Validators.min(0.01)]),
-      quantity: new FormControl<number | null>(product?.quantity || 0, [Validators.required, Validators.min(1)])
+      quantity: new FormControl<number | null>(product?.quantity || 0)
     });
   }
 

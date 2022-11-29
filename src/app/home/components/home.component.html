@@ -85,15 +85,6 @@
         </div>
 
         <div class="field mb-20">
-          <label for="name">Email</label>
-          <input type="text" formControlName="email" pInputText id="email" required />
-          <div *ngIf="(form?.email?.dirty || submitted) && form?.email?.invalid" class="ui-message ui-messages-error">
-            <small *ngIf="form?.email?.errors?.['required']">An Email Address is required.</small>
-            <small *ngIf="form?.email?.errors?.['email']">An Email Address must be in the correct format.</small>
-          </div>
-        </div>
-
-        <div class="field mb-20">
           <label for="description">Description</label>
           <textarea id="description" formControlName="description" pInputTextarea required rows="3" cols="20"></textarea>
         </div>
@@ -137,17 +128,13 @@
             <label for="quantity">Quantity</label>
             <p-inputNumber formControlName="quantity" id="quantity">
             </p-inputNumber>
-            <div *ngIf="(form?.quantity?.dirty || submitted) && form?.quantity?.invalid" class="ui-message ui-messages-error">
-              <small *ngIf="form?.quantity?.errors?.['required']">A Quantity is required.</small>
-              <small *ngIf="form?.quantity?.errors?.['min']">A Quantity must be above 1.</small>
-            </div>
           </div>
         </div>
       </ng-template>
 
       <ng-template pTemplate="footer">
         <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()" [disabled]="productForm.invalid && (productForm.dirty || productForm.touched)"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
       </ng-template>
     </p-dialog>
 
