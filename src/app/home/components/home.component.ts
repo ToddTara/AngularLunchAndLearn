@@ -81,12 +81,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  hideDialog() {
+  hideDialog(): void {
     this.productDialog = false;
     this.submitted = false;
   }
 
-  saveProduct() {
+  saveProduct(): void {
     this.submitted = true;
 
     this.product = {

@@ -7,8 +7,8 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { HomeFormComponent } from './components/home-form/home-form.component';
 import { ConfirmationService, MessageService } from "primeng/api";
 import { ProductService } from "../shared/services/productservice";
-import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
-import {RippleModule} from "primeng/ripple";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { RippleModule } from "primeng/ripple";
 
 @NgModule({
   declarations: [HomeComponent, HomeFormComponent],

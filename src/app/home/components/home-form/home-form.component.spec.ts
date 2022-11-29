@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomeFormComponent } from './home-form.component';
 
 describe('HomeFormComponent', () => {
@@ -18,6 +17,7 @@ describe('HomeFormComponent', () => {
   });
 
   it('should create', () => {
+    // @ts-ignore
     expect(component).toBeTruthy();
   });
 });
