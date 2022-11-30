@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
       accept: () => {
         this.products = this.products.filter(val => !this.selectedProducts.includes(val));
         this.selectedProducts = [];
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000});
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
       }
     });
   }
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
       accept: () => {
         this.products = this.products.filter(val => val.id !== product.id);
         this.product = {};
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
       }
     });
   }
@@ -102,11 +102,11 @@ export class HomeComponent implements OnInit {
     if (this.product.name?.trim()) {
       if (this.product.id) {
         this.products[this.findIndexById(this.product.id)] = this.product;
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
       } else {
         this.product.id = this.createId();
         this.products.push(this.product);
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000});
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
       }
 
       this.products = [...this.products];
@@ -141,13 +141,13 @@ export class HomeComponent implements OnInit {
   createId(): string {
     let id = '';
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for ( let i = 0; i < 5; i++ ) {
+    for (let i = 0; i < 5; i++) {
       id += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     return id;
   }
 
   alertCountUpdate(): void {
-    this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Count Child Updated', life: 3000});
+    this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Count Child Updated', life: 3000 });
   }
 }
