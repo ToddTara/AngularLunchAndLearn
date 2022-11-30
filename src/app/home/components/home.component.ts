@@ -90,6 +90,7 @@ export class HomeComponent implements OnInit {
     this.submitted = true;
 
     this.product = {
+      id: this.product.id || '',
       name: this.productForm.controls.name.value || '',
       email: this.productForm.controls.email.value || '',
       description: this.productForm.controls.description.value || '',
@@ -102,8 +103,7 @@ export class HomeComponent implements OnInit {
       if (this.product.id) {
         this.products[this.findIndexById(this.product.id)] = this.product;
         this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
-      }
-      else {
+      } else {
         this.product.id = this.createId();
         this.products.push(this.product);
         this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000});
